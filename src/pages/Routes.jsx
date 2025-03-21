@@ -19,7 +19,7 @@ const AppRouter = () => {
         }
       />
       <Route
-        path="/appointments"
+        path="/admin/appointments"
         element={
           <ProtectedRoute>
             <Appointments />
