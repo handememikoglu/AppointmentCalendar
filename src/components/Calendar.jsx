@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import DatePicker from "react-datepicker";
-import { tr } from "date-fns/locale"; 
+import { tr } from "date-fns/locale";
 import "react-datepicker/dist/react-datepicker.css";
 
 const Calendar = () => {
@@ -17,7 +17,7 @@ const Calendar = () => {
     e.preventDefault();
     if (selectedDate) {
       setAppointments([...appointments, selectedDate]);
-      setSelectedDate(null); 
+      setSelectedDate(null);
     }
   };
 
@@ -30,20 +30,20 @@ const Calendar = () => {
             selected={selectedDate}
             onChange={(date) => setSelectedDate(date)}
             showTimeSelect
-            timeFormat="HH:mm" 
-            timeIntervals={30} 
-            timeCaption="Saat" 
-            dateFormat="dd MMMM yyyy HH:mm" 
+            timeFormat="HH:mm"
+            timeIntervals={30}
+            timeCaption="Saat"
+            dateFormat="dd MMMM yyyy HH:mm"
             minDate={new Date()}
-            locale={tr} 
+            locale={tr}
             placeholderText="Tarih ve saat seçin"
-            minTime={new Date().setHours(8, 0, 0)} 
+            minTime={new Date().setHours(8, 0, 0)}
             maxTime={new Date().setHours(18, 0, 0)}
             className="formInput"
           />
-            <div>
+          <div>
             <button type="submit">Randevuyu Kaydet</button>
-            </div>
+          </div>
         </form>
         <h3>Seçilen Randevular</h3>
         {appointments.length === 0 ? (
